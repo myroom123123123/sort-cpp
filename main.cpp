@@ -1,14 +1,24 @@
 #include <iostream>
 using namespace std;
 
-int cube(int num) {
-	return num * num * num;
+bool isPositive(int value) {
+	if (value > 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 int main() {
-	int num;
-	cout << "Enter a number: ";
-	cin >> num;
-	int result = cube(num);
-	cout << "The cube of " << num << " is " << result << endl;
+	int value;
+	cout << "Enter a value: ";
+	cin >> value;
+	if (isPositive(value)) {
+		cout << "The value is positive." << endl;
+	}
+	else {
+		cout << "The value is negative." << endl;
+	}
+	return 0;
 }
