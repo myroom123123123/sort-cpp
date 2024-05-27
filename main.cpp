@@ -1,14 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int cube(int num) {
-	return num * num * num;
+int max(int a, int b) {
+	if (a > b) {
+		return a;
+	}
+	else {
+		return b;
+	}
 }
 
 int main() {
-	int num;
-	cout << "Enter a number: ";
-	cin >> num;
-	int result = cube(num);
-	cout << "The cube of " << num << " is " << result << endl;
+	int a, b;
+	cout << "Enter two numbers: ";
+	cin >> a >> b;
+	cout << "The maximum of " << a << " and " << b << " is " << max(a, b) << endl;
+	return 0;
 }
