@@ -1,21 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int power(int base, int exponent) {
-	if (exponent == 0) {
-		return 1;
+int sumRange(int a, int b) {
+	int sum = 0;
+	for (int i = a; i <= b; i++) {
+		sum += i;
 	}
-	else {
-		return base * power(base, exponent - 1);
-	}
+	return sum;
 }
 
 int main() {
-	int base, exponent;
-	cout << "Enter the base: ";
-	cin >> base;
-	cout << "Enter the exponent: ";
-	cin >> exponent;
-	cout << "The result is: " << power(base, exponent) << endl;
+	int a, b;
+	cout << "Enter the first number: ";
+	cin >> a;
+	cout << "Enter the second number: ";
+	cin >> b;
+	cout << "The sum of numbers in the range between " << a << " and " << b << " is " << sumRange(a, b) << endl;
 	return 0;
 }
