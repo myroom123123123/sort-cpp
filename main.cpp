@@ -1,40 +1,55 @@
-#include <iostream>
+﻿#include <iostream>
+#include <string>
+
 using namespace std;
 
-bool isPerfect(int n) {
-    if (n <= 1) {
-        return false;
-    }
-    int sum = 1;  
-    for (int i = 2; i <= n / 2; ++i) {
-        if (n % i == 0) {
-            sum += i;
-        }
-    }
-    return sum == n;
-}
-
-void findPerfectNumbers(int start, int end) {
-    cout << "Perfect numbers in the interval [" << start << ", " << end << "] are: ";
-    bool found = false;
-    for (int i = start; i <= end; ++i) {
-        if (isPerfect(i)) {
-            cout << i << " ";
-            found = true;
-        }
-    }
-    if (!found) {
-        cout << "None";
-    }
-    cout << endl;
+void printCard(string rank, string suit) {
+    cout << char(218) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(191) << endl;
+    cout << char(179) << " " << rank << "     " << char(179) << endl;
+    cout << char(179) << "       " << char(179) << endl;
+    cout << char(179) << "   " << suit << "   " << char(179) << endl;
+    cout << char(179) << "       " << char(179) << endl;
+    cout << char(179) << "     " << rank << " " << char(179) << endl;
+    cout << char(192) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(217) << endl;
 }
 
 int main() {
-    int start, end;
-    cout << "Enter the start of the interval: ";
-    cin >> start;
-    cout << "Enter the end of the interval: ";
-    cin >> end;
-    findPerfectNumbers(start, end);
+    string rank, suit;
+
+    cout << "Enter the rank of the card: ";
+    cin >> rank;
+    if (rank == "jack") {
+		rank = "J";
+	}
+	else if (rank == "queen") {
+		rank = "Q";
+	}
+    else if (rank == "king") {
+		rank = "K";
+	}
+    else if (rank == "ace") {
+		rank = "A";
+    }
+
+    cout << "Enter the suit of the card: ";
+    cin >> suit;
+	if (suit == "hearts") {
+		suit = char(3);
+    }
+    else if (suit == "diamonds") {
+		suit = char(4);
+    }
+    else if (suit == "clubs") {
+		suit = char(5);
+    }
+    else if (suit == "spades") {
+		suit = char(6);
+    }
+    else {
+		cout << "Invalid suit" << endl;
+		return 1;
+	}
+    printCard(rank, suit);
+
     return 0;
 }
